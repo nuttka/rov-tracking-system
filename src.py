@@ -1,5 +1,4 @@
 import pybgpstream
-import appdirs
 import pickle
 import os
 
