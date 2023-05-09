@@ -7,7 +7,7 @@ PREFIX_LIST = ['138.185.229.0/24', '204.9.170.0/24']
 RECORD_TYPE = "updates"
 
 START_DATE = "2023-04-25 02:50:00"
-END_DATE = "2023-04-25 07:10:00 UTC"
+END_DATE = "2023-04-25 22:10:00 UTC"
 
 
 
@@ -47,21 +47,14 @@ class BGPReader():
 
     def read(self):
         stream = pybgpstream.BGPStream(
-            # temp
-            from_time="2017-07-07 00:00:00", until_time="2017-07-07 00:10:00 UTC",
-            collectors=["route-views.sg", "route-views.eqix"],
-            record_type="updates",
-            filter="peer 11666 and prefix more 210.180.0.0/16"
-            # etemp
-
-            # from_time=START_DATE, until_time=END_DATE,
-            # record_type=RECORD_TYPE,
+            from_time=START_DATE, until_time=END_DATE,
+            record_type=RECORD_TYPE,
         )
-
+        
         stream.set_data_interface_option("broker", "cache-dir", self.cache_dir)
 
-        # for prefix in self.prefix_list:
-        #     stream.stream.parse_filter_string(FILTER.format(prefix))
+        for prefix in self.prefix_list:
+            stream.stream.parse_filter_string(FILTER.format(prefix))
 
         for elem in stream:
             obj = self.get_obj(elem)
@@ -72,7 +65,7 @@ if __name__ == "__main__":
     bgpReader = BGPReader(PREFIX_LIST)
     bgpReader.read()
 
-    print("saving..")
+    # print("saving..")
 
     print(elems)
 
