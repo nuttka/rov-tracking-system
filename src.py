@@ -1,9 +1,14 @@
 import pybgpstream
 import pickle
 import os
+import ipaddress
 
 FILTER = 'prefix exact {}'
-PREFIX_LIST = ['138.185.229.0/24', '204.9.170.0/24']
+PREFIX_LIST = [
+        "184.164.224.0/19^19-24",
+        "204.9.168.0/22^22-24",
+        "138.185.228.0/22^22-24"
+    ]
 RECORD_TYPE = "updates"
 
 START_DATE = "2023-04-25 02:50:00"
@@ -14,6 +19,24 @@ END_DATE = "2023-04-25 22:10:00 UTC"
 DATA_DIR = os.getcwd() + '/data'
 os.makedirs(DATA_DIR, exist_ok=True)
 elems = []
+
+
+def generate_prefix_list():
+    prefixes = []
+
+    for prefix in PREFIX_LIST:
+        network_address = prefix.split('^')[0]
+        network = ipaddress.IPv4Network(network_address)
+
+        subnets = []
+        subnets.extend(network.subnets(prefixlen_diff=24 - network.prefixlen))
+
+        subnets = list(dict.fromkeys(subnets))
+        for subnet in subnets:
+            prefixes.append(subnet)
+
+    return prefixes
+
 
 class BGPReader():
     def __init__(self, prefix_list):
@@ -62,7 +85,8 @@ class BGPReader():
 
 
 if __name__ == "__main__":
-    bgpReader = BGPReader(PREFIX_LIST)
+    prefix_list = generate_prefix_list()
+    bgpReader = BGPReader(prefix_list)
     bgpReader.read()
 
     # print("saving..")
