@@ -13,16 +13,18 @@ const Header = () => {
             <AppBar position="relative" classes={classes.appbar} style={{ background: '#2E3B55' }}>
                 <Toolbar classes={classes.toolbar}>
                     <Router />
-                    <Typography variant="h7" className={classes.typotitle}>
-                        ROV Tracking System
+                    <Typography variant="h8">
+                        <Link to="/" className={classes.link}>
+                            ROV Tracking System
+                        </Link>
                     </Typography>
-                    {/* <Typography variant="h8" className={classes.typo}> */}
-                        <Link to="/Dashboard"> 
-                        <Typography variant="h8" className={classes.typo}>
-                        About 
-                            </Typography>
+                    <div className={classes.about}>
+                        <Typography variant="h8">
+                            <Link to="/about" className={classes.link}>
+                                About
                             </Link>
-                    {/* </Typography> */}
+                        </Typography>
+                    </div>
                 </Toolbar>
             </AppBar>
         </>

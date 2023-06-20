@@ -7,13 +7,14 @@ const useStyles = makeStyles((theme) => ({
     toolbar: {
         justifyContent: 'space-between'
     },
-    typotitle: {
-        paddingRight: "31.5%",
-        paddingLeft: "0.5%"
+    about: {
+        paddingLeft: '38%'
     },
-    typo: {
-        paddingLeft: '2.5%'
-    }
+    link: {
+        color: '#FFFFFF',
+        textDecoration: 'none',
+        marginLeft: theme.spacing(2),
+    },
 }));
 
 export default useStyles;
