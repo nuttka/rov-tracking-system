@@ -5,8 +5,8 @@ from datetime import datetime, timedelta
 # import numpy as np
 
 
-START_DATE = "2023-04-25 02:50:00"
-END_DATE = "2023-04-25 22:10:00 UTC"
+START_DATE = "2023-05-25 02:50:00"
+END_DATE = "2023-05-25 03:50:00 UTC"
 DATA_DIR = os.getcwd() + '/data'
 
 

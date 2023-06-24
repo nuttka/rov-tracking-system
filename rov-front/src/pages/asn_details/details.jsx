@@ -53,25 +53,53 @@ const AsnDetails = () => {
   ];
 
   const rows = [
-      { id: 1, vpIp: '154.11.15.28', daysMeasured: 103, daysFiltering: 86, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 2, vpIp: '208.115.136.67', daysMeasured: 87, daysFiltering: 84, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 3, vpIp: '154.11.12.212', daysMeasured: 192, daysFiltering: 79, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 4, vpIp: '154.11.15.28', daysMeasured: 103, daysFiltering: 86, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 5, vpIp: '208.115.136.67', daysMeasured: 87, daysFiltering: 84, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 6, vpIp: '154.11.12.212', daysMeasured: 192, daysFiltering: 79, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 7, vpIp: '154.11.15.28', daysMeasured: 103, daysFiltering: 86, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 8, vpIp: '208.115.136.67', daysMeasured: 87, daysFiltering: 84, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 9, vpIp: '154.11.12.212', daysMeasured: 192, daysFiltering: 79, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 10, vpIp: '154.11.15.28', daysMeasured: 103, daysFiltering: 86, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 12, vpIp: '208.115.136.67', daysMeasured: 87, daysFiltering: 84, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 13, vpIp: '154.11.12.212', daysMeasured: 192, daysFiltering: 79, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 14, vpIp: '154.11.15.28', daysMeasured: 103, daysFiltering: 86, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 15, vpIp: '208.115.136.67', daysMeasured: 87, daysFiltering: 84, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 16, vpIp: '154.11.12.212', daysMeasured: 192, daysFiltering: 79, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 17, vpIp: '154.11.15.28', daysMeasured: 103, daysFiltering: 86, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 18, vpIp: '208.115.136.67', daysMeasured: 87, daysFiltering: 84, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
-      { id: 19, vpIp: '154.11.12.212', daysMeasured: 192, daysFiltering: 79, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 1, vpIp: '154.11.15.28', daysMeasured: 103, daysFiltering: 86, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 2, vpIp: '208.115.136.67', daysMeasured: 87, daysFiltering: 84, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 3, vpIp: '154.11.12.212', daysMeasured: 192, daysFiltering: 79, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 4, vpIp: '154.11.15.28', daysMeasured: 103, daysFiltering: 86, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 5, vpIp: '208.115.136.67', daysMeasured: 87, daysFiltering: 84, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 6, vpIp: '154.11.12.212', daysMeasured: 192, daysFiltering: 79, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 7, vpIp: '154.11.15.28', daysMeasured: 103, daysFiltering: 86, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 8, vpIp: '208.115.136.67', daysMeasured: 87, daysFiltering: 84, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 9, vpIp: '154.11.12.212', daysMeasured: 192, daysFiltering: 79, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 10, vpIp: '154.11.15.28', daysMeasured: 103, daysFiltering: 86, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 12, vpIp: '208.115.136.67', daysMeasured: 87, daysFiltering: 84, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 13, vpIp: '154.11.12.212', daysMeasured: 192, daysFiltering: 79, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 14, vpIp: '154.11.15.28', daysMeasured: 103, daysFiltering: 86, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 15, vpIp: '208.115.136.67', daysMeasured: 87, daysFiltering: 84, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 16, vpIp: '154.11.12.212', daysMeasured: 192, daysFiltering: 79, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 17, vpIp: '154.11.15.28', daysMeasured: 103, daysFiltering: 86, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 18, vpIp: '208.115.136.67', daysMeasured: 87, daysFiltering: 84, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
+      // { id: 19, vpIp: '154.11.12.212', daysMeasured: 192, daysFiltering: 79, lastMeasured: '31/08/2022', lastMarked: '31/08/2022' },
   ];
+
+  function randomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  }
+
+  function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
+    
+  for (let i=0; i<199000; i++) {
+    let d = randomDate(new Date(2012, 0, 1), new Date());
+
+    const today = d;
+    const yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1; // Months start at 0!
+    let dd = today.getDate();
+
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+
+    const formattedToday = dd + '/' + mm + '/' + yyyy;
+
+
+    let dm = randomIntFromInterval(1, 900);
+    let df = randomIntFromInterval(1, 900);
+    rows.push(
+      { id: i, vpIp: '154.11.12.212', daysMeasured: dm, daysFiltering: df, lastMeasured: d, lastMarked: d });
+  }
 
   const classes = useStyles();
 

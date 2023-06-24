@@ -11,8 +11,8 @@ PREFIX_LIST = [
     ]
 RECORD_TYPE = "updates"
 
-START_DATE = "2023-04-25 02:50:00"
-END_DATE = "2023-04-25 22:10:00 UTC"
+START_DATE = "2023-05-25 02:50:00"
+END_DATE = "2023-05-25 03:50:00 UTC"
 
 
 
@@ -57,11 +57,11 @@ class BGPReader():
             "peer_asn": elem.peer_asn,
             "peer_address": elem.peer_address,
             "prefix": elem.fields['prefix'] if "prefix" in elem.fields else None,
-            "next-hop": elem.fields['next-hop'] if "next-hop" in elem.fields else None,
-            "as-path": elem.fields['as-path'] if "as-path" in elem.fields else None,
+            "next_hop": elem.fields['next-hop'] if "next-hop" in elem.fields else None,
+            "as_path": elem.fields['as-path'] if "as-path" in elem.fields else None,
             "communities": elem.fields['communities'] if "communities" in elem.fields else None,
-            "old-state": elem.fields['old-state'] if "old-state" in elem.fields else None,
-            "new-state": elem.fields['new-state'] if "new-state" in elem.fields else None
+            "old_state": elem.fields['old-state'] if "old-state" in elem.fields else None,
+            "new_state": elem.fields['new-state'] if "new-state" in elem.fields else None
         }
 
         return obj
